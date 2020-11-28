@@ -1,47 +1,15 @@
 # World_Weather_Analysis
 
-Here's an outline of your project plan:
+## Overview of the Project
+This project makes a few changes to improve a weather app. Specifically, the weather description was added to the weather data already retrieved. Input statements were used to filter the data for their weather preferences, which were used to identify potential travel destinations and nearby hotels. From the list of potential travel destinations, four cities were chosen to create a travel itinerary. Finally, Google Maps Directions API were used to create a travel route between the four cities as well as a marker layer map.
 
-Task: Collect and analyze weather data across cities worldwide.
-Purpose: PlanMyTrip will use the data to recommend ideal hotels based on clients' weather preferences.
-Method: Create a Pandas DataFrame with 500 or more of the world's unique cities and their weather data in real time. This process will entail collecting, analyzing, and visualizing the data.
+### Purpose
+The purpose of the project is collect and analyze weather data across cities worldwide. The app uses the data to recommend ideal hotels from the cities' coordinates using Google's Maps and Places API, and Search Nearby feature. In addition, the app creates a travel itinerary using the Directions API. The hotels and itinerary are based on clients' weather preferences.
 
-Collect the Data
+## Analysis
 
-Use the NumPy module to generate more than 1,500 random latitudes and longitudes.
-Use the citipy module to list the nearest city to the latitudes and longitudes.
-Use the OpenWeatherMap API to request the current weather data from each unique city in your list.
-Parse the JSON data from the API request.
-Collect the following data from the JSON file and add it to a DataFrame:
-City, country, and date
-Latitude and longitude
-Maximum temperature
-Humidity
-Cloudiness
-Wind speed
-Exploratory Analysis with Visualization
+1. A set of 2,000 random latitudes and longitudes were generated to retrieve the nearest city and perform an API call with the OpenWeatherMap. In addition to the city weather data gathered in the module were used to retrieve the current weather description for each city. A new DataFrame containing the updated weather data was created.
 
-Create scatter plots of the weather data for the following comparisons:
-Latitude versus temperature
-Latitude versus humidity
-Latitude versus cloudiness
-Latitude versus wind speed
-Determine the correlations for the following weather data:
-Latitude and temperature
-Latitude and humidity
-Latitude and cloudiness
-Latitude and wind speed
-Create a series of heatmaps using the Google Maps and Places API that showcases the following:
-Latitude and temperature
-Latitude and humidity
-Latitude and cloudiness
-Latitude and wind speed
-Visualize Travel Data
+2. Input statements were used to retrieve customer weather preferences, then those preferences identified potential travel destinations and nearby hotels. Those destinations on a marker layer map with pop-up markers was setup and saved a png file.
 
-Create a heatmap with pop-up markers that can display information on specific cities based on a customer's travel preferences. Complete these steps:
-
-Filter the Pandas DataFrame based on user inputs for a minimum and maximum temperature.
-Create a heatmap for the new DataFrame.
-Find a hotel from the cities' coordinates using Google's Maps and Places API, and Search Nearby feature.
-Store the name of the first hotel in the DataFrame.
-Add pop-up markers to the heatmap that display information about the city, current maximum temperature, and a hotel in the city.
+3. Google Directions API was used to create a travel itinerary that shows the route between four cities chosen from the customer’s possible travel destinations. A marker layer map with a pop-up marker for each city on the itinerary was created and saved a png file.
